@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warkop Bu Lily</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="#" class="navbar-logo">Warkop<span> Bu Lily</span>.</a>
+        <div class="navbar-nav">
+          <a href="#home">Home</a>
+          <a href="#about">Tentang Kami</a>
+          <a href="#menu">Menu</a>
+          <a href="#contact">Kontak</a>
+<button id="cartBtn" class="cart-btn" aria-label="Buka Keranjang">
+  <div class="cart-wrapper">
+  <i class="bi bi-cart-plus-fill"></i>
+  <span id="cartCount">0</span>
+</div>
+
+</button>
+<div id="cart" class="hidden cart-panel" aria-hidden="true">
+  <div class="cart-header">
+    <h3>Keranjang</h3>
+    <button id="closeCart" aria-label="Tutup">✖</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-footer">
+    <input 
+  type="text" 
+  id="customerName" 
+  placeholder="Masukkan nama kamu"
+  style="width:100%; padding:6px; margin-bottom:8px;"
+/>
+    <strong>Total: <span id="cartTotal">Rp 0</span></strong>
+    <button id="checkoutBtn">Checkout</button>
+  </div>
+</div>
+
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <main class="content">
+        <h1>Mari Nikmati Secangkir <span>kopi</span></h1>
+        <a href="#menu" class="cta">Pesan Sekarang</a>
+      </main>
+    </section>
+
+    <!--About Section-->
+    <section id="about" class="about">
+      <h2><span>Tentang</span> Kami</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/galeri3.jpg" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <h3>Kenapa Warung Bu Lily?</h3>
+          <p>
+            Warung Bu Lily adalah tempat sederhana yang fokus menyajikan berbagai minuman favorit untuk menemani waktu santai. Mulai dari minuman hangat hingga minuman segar, semua kami racik dengan takaran yang pas dan rasa yang konsisten, agar setiap gelas tetap nikmat dari tegukan pertama hingga terakhir.
+          </p>
+          <p>
+            Warung ini hadir sebagai tempat singgah bagi siapa saja yang ingin beristirahat sejenak, mengobrol santai, atau sekadar menikmati minuman di tengah kesibukan. Dengan harga yang bersahabat dan suasana yang nyaman, Warung Bu Lily cocok untuk semua kalangan.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="menu" class="menu">
+      <h2><span>Menu</span> Minuman</h2>
+      <p>
+        Disini ada beberapa Minuman yang kami Sajikan:
+      </p>
+        <div class="menu-container">
+          <div class="menu-item">
+            <img src="img/Aqua.jpg" alt="Aqua">
+            <h3>Aqua</h3>
+            <p>Rp 4.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/cappuccino.jpg" alt="Cappucino">
+            <h3>Cappucino</h3>
+            <p>Rp 8.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/es-kopi-.jpg" alt="Kopi Hitam Dingin">
+            <h3>Kopi Hitam Dingin</h3>
+            <p>Rp 5.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/teh-manis panas.jpg" alt="Teh Manis Panas">
+            <h3>Teh Manis Panas</h3>
+            <p>Rp 5.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/teh manis dingin.jpg" alt="Teh Manis Dingin">
+            <h3>Teh Manis Dingin</h3>
+            <p>Rp 5.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/Kopi Hitam.jpg" alt="Kopi Hitam">
+            <h3>Kopi Hitam</h3>
+            <p>Rp 6.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/Kopi Susu Panas.jpg" alt="Kopi Susu Panas">
+            <h3>Kopi Susu Panas</h3>
+            <p>Rp 8.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/milo-susu.jpg" alt="Milo + Susu">
+            <h3>Milo + Susu</h3>
+            <p>Rp 8.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/susu putih.jpg" alt="Susu Putih">
+            <h3>Susu Putih</h3>
+            <p>Rp 7.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/Nutrisari+susu.jpg" alt="Nutri Sari All Rasa">
+            <h3>Nutri Sari All Rasa</h3>
+            <p>Rp 5.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/Badak Dingin.jpg" alt="Badak-Dingin">
+            <h3>Badak Dingin</h3>
+            <p>Rp 6.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/Susu-coklat-bubuk.jpg" alt="Susu Coklat">
+            <h3>Susu Coklat</h3>
+            <p>Rp 7.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/Bandrek.jpg" alt="Bandrek">
+            <h3>Bandrek</h3>
+            <p>Rp 10.000</p>
+          </div>
+          <div class="menu-item">
+            <img src="img/Lemon Tea.jpg" alt="Lemon Tea">
+            <h3>Lemon Tea</h3>
+            <p>Rp 5.000</p>
+          </div>
+        </div>
+      </section>
+    </section>
+   <!-- Contact Section start -->
+   <section class="contact" id="contact">
+  <div class="contact-header">
+    <h2>Kontak <span>Kami</span></h2>
+    <p>Temui dan Hubungi kami Disini.</p>
+  </div>
+
+  <div class="contact-container">
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!4v1734070000000!6m8!1m7!1skm_swY7b2oG9NJ6vmgYoJQ!2m2!1d3.5779021!2d98.6247714!3f192.47!4f82.38!5f0.7820865974627469"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="contact-wrapper">
+  <div class="cta-box">
+    <h3>Butuh Respon Cepat?</h3>
+    <p>Kami siap membantu Anda kapan saja. Klik tombol di bawah untuk chat langsung dengan kami.</p>
+    <a href="https://wa.me/6281234567890" target="_blank" class="cta-btn">
+      💬 Chat via WhatsApp
+    </a>
+  </div>
+</div>
+
+
+   <!-- panel keranjang -->
+<div id="cart" class="hidden cart-panel" aria-hidden="true">
+  <div class="cart-header">
+    <h3>Keranjang</h3>
+    <button id="closeCart" aria-label="Tutup">✖</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-footer">
+    <input 
+  type="text" 
+  id="customerName" 
+  placeholder="Masukkan nama kamu"
+  style="width:100%; padding:6px; margin-bottom:8px;"
+/>
+    <strong>Total: <span id="cartTotal">Rp 0</span></strong>
+    <button id="checkoutBtn">Checkout</button>
+  </div>
+</div>
+   <br><br>
+    <br><br>
+  </body>
+</html>

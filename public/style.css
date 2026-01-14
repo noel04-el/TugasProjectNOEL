@@ -1,0 +1,518 @@
+:root {
+  --primary: #9ba83c;
+  --bg: rgba(79, 95, 52, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: white;
+  min-height: 3000px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(79, 95, 52, 0.8);
+  border-bottom: 1px solid #6f5438;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+  font-style: italic;
+}
+
+.navbar .navbar-nav a {
+  color: white;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a::hover::after {
+  transform: scaleX(0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+/* tombol keranjang di navbar */
+/* =========================
+   CART BUTTON
+========================= */
+.cart-btn {
+  background: none;
+  border: none;
+  color: #fff;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 6px;
+}
+
+/* =========================
+   CART BADGE (COUNT)
+========================= */
+#cartCount {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+
+  background: red;
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  pointer-events: none; /* klik tetap ke button */
+}
+
+/* =========================
+   CART PANEL
+========================= */
+.cart-panel {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+
+  width: 320px;
+  max-height: 70vh;
+
+  background: #fff;
+  color: #000;
+
+  padding: 12px;
+  overflow-y: auto;
+
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 99999;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   CART ITEM
+========================= */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 48px;
+  height: 48px;
+
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-item .ci-info {
+  flex: 1;
+}
+
+.cart-item .ci-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =========================
+   ADD TO CART BUTTON
+========================= */
+.add-to-cart {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+
+  background: linear-gradient(135deg, #b3ff00, #e2ff5f);
+  color: #111111;
+
+  border: none;
+  border-radius: 25px;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.add-to-cart:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: linear-gradient(135deg, #ffa726, #ff7043);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.add-to-cart:active {
+  transform: scale(0.95);
+}
+
+/* =========================
+   FOOTER & UTILITIES
+========================= */
+.cart-footer {
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("img/Halaman.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* filter: blur(8px);
+        -webkit-filter: blur(8px); */
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  /* background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  ); */
+}
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  border: none;
+  border-radius: 10px;
+  background: #9ba83c;
+  color: #fff;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-left: 10px;
+}
+.about,
+.menu {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+.about h2 span,
+.menu h2 span {
+  color: black;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about .row .about-img {
+    width: 100%;
+  }
+
+  .about .row .about-img img {
+    width: 80%;
+    margin: 0 auto; /* Supaya gambar ke tengah */
+  }
+
+  .about .row .content {
+    padding: 1rem 0;
+  }
+}
+.menu h2 {
+  margin-bottom: 1rem;
+}
+.menu p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+#menu {
+  text-align: center;
+  padding: 50px;
+  background-color: #eef4ea; /* warna gelap, cocok dengan tema kamu */
+  color: #030303;
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.menu-item {
+  background-color: #ffff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.menu-item h3 {
+  margin: 10px 0 5px 0;
+}
+
+.menu-item p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #4e6401; /* warna harga kuning */
+}
+
+@media (max-width: 600px) {
+  .menu-item {
+    width: 45%;
+  }
+}
+
+.contact {
+  background: var(--bg);
+  color: #fff;
+  padding: 80px 8%;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h2 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.contact-header h2 span {
+  color: #ffff;
+}
+
+.contact-header p {
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* GRID */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* MAP */
+.contact-map iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+  border-radius: 6px;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ffff;
+  padding: 18px;
+}
+
+.input-box i {
+  margin-right: 15px;
+  color: #ccc;
+  font-size: 18px;
+}
+
+.input-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* BUTTON */
+.contact-form button {
+  width: 200px;
+  padding: 14px;
+  background: #b3ff00;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, red, #e2ff5f);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-map iframe {
+    height: 300px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}
+
